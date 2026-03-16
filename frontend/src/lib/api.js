@@ -1,7 +1,7 @@
 const API = process.env.NEXT_PUBLIC_API_URL;
 
 if (!API) {
-  throw new Error("NEXT_PUBLIC_API_URL não definida. Configure a variável de ambiente no Vercel apontando para o Hugging Face Space.");
+  console.warn("Aviso: NEXT_PUBLIC_API_URL não definida. O app usará dados mockados até que a variável seja configurada na Vercel.");
 }
 
 export async function fetchOpportunities(category = "all", limit = 20) {
