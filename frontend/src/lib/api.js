@@ -1,4 +1,8 @@
-const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+const API = process.env.NEXT_PUBLIC_API_URL;
+
+if (!API) {
+  throw new Error("NEXT_PUBLIC_API_URL não definida. Configure a variável de ambiente no Vercel apontando para o Hugging Face Space.");
+}
 
 export async function fetchOpportunities(category = "all", limit = 20) {
   const res = await fetch(`${API}/api/opportunities?category=${category}&limit=${limit}`);

@@ -9,7 +9,16 @@ import { getDemand }              from "./services/demand.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://flipcard.vercel.app",
+    /\.vercel\.app$/,       // qualquer subdomínio Vercel (preview deploys)
+    /\.hf\.space$/,         // chamadas internas entre spaces HF
+    "http://localhost:3000", // desenvolvimento local
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(express.json());
 
 // ── Status ────────────────────────────────────────────────────────────────────
