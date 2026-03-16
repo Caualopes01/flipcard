@@ -1,0 +1,13 @@
+# Secrets
+backend/.env
+frontend/.env.local
+
+# Dependências
+**/node_modules/
+
+# Build Next.js
+frontend/.next/
+frontend/out/
+
+# Logs
+*.log

@@ -1,0 +1,170 @@
+.card {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.4s ease backwards;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.hot::before { background: linear-gradient(90deg, var(--orange), var(--pink)); }
+.good::before { background: linear-gradient(90deg, var(--purple), var(--blue)); }
+.ok::before { background: linear-gradient(90deg, var(--green), #2dd4bf); }
+
+.card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tag_pokemon { background: rgba(251,191,36,0.15); color: var(--yellow); border: 0.5px solid rgba(251,191,36,0.3); }
+.tag_magic   { background: rgba(167,139,250,0.15); color: var(--purple); border: 0.5px solid rgba(167,139,250,0.3); }
+.tag_onepiece { background: rgba(248,113,113,0.15); color: var(--red); border: 0.5px solid rgba(248,113,113,0.3); }
+.tag_dragon  { background: rgba(251,146,60,0.15); color: var(--orange); border: 0.5px solid rgba(251,146,60,0.3); }
+
+.platform {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: var(--muted);
+  border: 0.5px solid rgba(255,255,255,0.1);
+}
+
+.location {
+  font-size: 10px;
+  color: var(--hint);
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.set { font-size: 12px; color: var(--muted); }
+
+.scoreBlock { text-align: right; flex-shrink: 0; }
+
+.scoreNum {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.score_hot   { color: var(--orange); }
+.score_good  { color: var(--purple); }
+.score_ok    { color: var(--green); }
+
+.scoreLabel {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.priceRow { display: flex; align-items: baseline; gap: 8px; }
+
+.priceAsk  { font-size: 20px; font-weight: 600; color: var(--green); }
+.priceMarket { font-size: 13px; color: var(--hint); text-decoration: line-through; }
+.priceDiff {
+  font-size: 12px;
+  color: var(--green);
+  font-weight: 500;
+  background: rgba(74,222,128,0.1);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.buyers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.avatars { display: flex; }
+
+.avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(167,139,250,0.3);
+  border: 1.5px solid var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--purple);
+  margin-left: -5px;
+}
+
+.avatar:first-child { margin-left: 0; }
+
+.thumb {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.7;
+  pointer-events: none;
+}
