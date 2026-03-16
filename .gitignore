@@ -1,6 +1,10 @@
 # Secrets
 backend/.env
+backend/env
 frontend/.env.local
+frontend/env.local
+.env
+.env.local
 
 # Dependências
 **/node_modules/
@@ -11,3 +15,7 @@ frontend/out/
 
 # Logs
 *.log
+
+# OS
+.DS_Store
+**/.DS_Store

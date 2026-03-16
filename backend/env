@@ -1,9 +1,0 @@
-# Mercado Livre
-ML_CLIENT_ID=565440032675267
-ML_CLIENT_SECRET=2LE7cO1JlAga3n52LNIazooArXsZut3y
-ML_REDIRECT_URI=https://flipcard.vercel.app/callback
-
-# Manus
-MANUS_API_KEY=sk-K9k8pvhv5Y17RS8IM2AC_4gP_6ghp9VUU6yNDS3yBsIAhDW_imTTJX1bLXqQ9OM4hJdrqnKljSDGPb-N5qPSPniqlfvn
-
-PORT=7860
